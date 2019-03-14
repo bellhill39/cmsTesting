@@ -15,25 +15,33 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login/','PostController@login' );
+// url for dashboard of the the budget
+Route::get('/dashboard','Dashboard@index' );
+
+//url for budget allocation
+Route::get('/allocatebudget','budget@create');
 
 
 
-
-Route::get('/dashboard/','PostController@index');
-
-
-
-Route::get('/new_budget', 'PostController@add_new_budget');
-
-
-Route::get('/unitinfo', function () {
-    return "this is unit information page";
-});
-
-Route::get('/logout', function () {
-    return "this is logout page";
-});
-
-Route::resource('post','PostController');
+//Route::get('/login/','PostController@login' );
+//
+//
+//
+//
+//Route::get('/dashboard/','PostController@index');
+//
+//
+//
+//Route::get('/new_budget', 'PostController@add_new_budget');
+//
+//
+//Route::get('/unitinfo', function () {
+//    return "this is unit information page";
+//});
+//
+//Route::get('/logout', function () {
+//    return "this is logout page";
+//});
+//
+//Route::resource('post','PostController');
 
