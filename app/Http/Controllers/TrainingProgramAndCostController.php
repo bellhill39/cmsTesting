@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class PostController extends Controller
+class TrainingProgramAndCostController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        return "its working";
+        return view('training_programe_and_cost.index');
     }
 
     /**
@@ -23,7 +23,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('training_programe_and_cost.create');
     }
 
     /**
@@ -80,13 +80,5 @@ class PostController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function login(){
-        return view('login');
-    }
-
-    public function add_new_budget(){
-        return view ('new_budget');
     }
 }

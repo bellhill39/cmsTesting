@@ -4,7 +4,7 @@
         <!-- Sidebar user panel -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <img src="{!! asset('dist/img/user2-160x160.jpg') !!}" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
                 <p>Training-Admin</p>
@@ -25,10 +25,9 @@
             </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="index.html"><i class="fa fa-circle-o"></i> Allocate Budget </a></li>
-                    <li class="active"><a href="index2.html"><i class="fa fa-circle-o"></i> De-Allocate Budget</a></li>
-                    <li class="active"><a href="index2.html"><i class="fa fa-circle-o"></i> View Budget</a></li>
-                    <li class="active"><a href="index2.html"><i class="fa fa-circle-o"></i> Edit Budget</a></li>
+                    <li><a href="{!! url('budget/create') !!}"><i class="fa fa-circle-o"></i> Allocate Budget </a></li>
+                    <li class="active"><a href="{!! url('budget') !!}"><i class="fa fa-circle-o"></i> View Budget</a></li>
+                    <li class="active"><a href="{!! url('budget/edit') !!}"><i class="fa fa-circle-o"></i> Edit Budget</a></li>
                 </ul>
             </li>
             <li class="active treeview menu-open">
@@ -39,13 +38,13 @@
             </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="index.html"><i class="fa fa-circle-o"></i> New unit </a></li>
-                    <li class="active"><a href="index2.html"><i class="fa fa-circle-o"></i> View units</a></li>
+                    <li><a href="{!! url('unit/create') !!}"><i class="fa fa-circle-o"></i> New unit </a></li>
+                    <li class="active"><a href="{!! url('unit') !!}"><i class="fa fa-circle-o"></i> View units</a></li>
 
                 </ul>
             </li>
-            <li><a href="https://adminlte.io/docs"><i class="fa fa-book"></i> <span>Training programs & cost</span></a></li>
-            <li><a href="https://adminlte.io/docs"><i class="fa fa-book"></i> <span>Notify units</span></a></li>
+            <li><a href="{!! url('training-program-and-cost') !!}"><i class="fa fa-book"></i> <span>Training programs & cost</span></a></li>
+            <li><a href="{!! url('notify-units') !!}"><i class="fa fa-book"></i> <span>Notify units</span></a></li>
 
 
     </section>

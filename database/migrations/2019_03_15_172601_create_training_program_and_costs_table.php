@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEmployeeTable extends Migration
+class CreateTrainingProgramAndCostsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,8 @@ class CreateEmployeeTable extends Migration
      */
     public function up()
     {
-        Schema::create('employee', function (Blueprint $table) {
+        Schema::create('training_program_and_costs', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('employee_id');
-            $table->string('name');
-            $table->bigIncrements('unit_id');
-            //training programme id
             $table->timestamps();
         });
     }
@@ -30,6 +26,6 @@ class CreateEmployeeTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('employee');
+        Schema::dropIfExists('training_program_and_costs');
     }
 }

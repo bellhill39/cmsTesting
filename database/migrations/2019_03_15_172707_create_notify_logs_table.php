@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUnitTable extends Migration
+class CreateNotifyLogsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,9 @@ class CreateUnitTable extends Migration
      */
     public function up()
     {
-        Schema::create('unit', function (Blueprint $table) {
+        Schema::create('notify_logs', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigIncrements('budget_id');
             $table->timestamps();
-            $table->string('name');
-            $table->string('head_of_unit');
-            $table->string('email')->nullable();
-            $table->integer('contact number');
-            $table->text('reason');
-
         });
     }
 
@@ -33,6 +26,6 @@ class CreateUnitTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('unit');
+        Schema::dropIfExists('notify_logs');
     }
 }

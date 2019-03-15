@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use PHPUnit\Framework\MockObject\Stub\ReturnValueMap;
 
-class budget extends Controller
+class BudgetController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +15,7 @@ class budget extends Controller
      */
     public function index()
     {
-        //
+        return view('budget.index');
     }
 
     /**
@@ -23,7 +25,7 @@ class budget extends Controller
      */
     public function create()
     {
-        return view('new_budget');
+        return view('budget.create');
     }
 
     /**
@@ -34,7 +36,23 @@ class budget extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'BudgetCode' => 'required',
+            'BudgetAmount' => 'required',
+            'BudgetUnit' => 'required',
+        ]);
+
+        dd($request->all());
+
+//        Budget::create([
+//            'code'=>$request->BudgetCode,
+//            'code'=>$request->BudgetCode,
+//            'code'=>$request->BudgetCode
+//        ]);
+//
+//        Return Redirect::back();
+
+
     }
 
     /**

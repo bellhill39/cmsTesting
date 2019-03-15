@@ -12,36 +12,24 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('dashboard');
 });
 
-// url for dashboard of the the budget
-Route::get('/dashboard','Dashboard@index' );
+Route::Resource('budget','BudgetController');
 
-//url for budget allocation
-Route::get('/allocatebudget','budget@create');
+Route::Resource('unit','UnitController');
+
+Route::Resource('training-program-and-cost','TrainingProgramAndCostController');
+
+Route::Resource('notify-units','NotifyUnitController');
 
 
 
-//Route::get('/login/','PostController@login' );
-//
-//
-//
-//
-//Route::get('/dashboard/','PostController@index');
-//
-//
-//
-//Route::get('/new_budget', 'PostController@add_new_budget');
-//
-//
-//Route::get('/unitinfo', function () {
-//    return "this is unit information page";
-//});
-//
-//Route::get('/logout', function () {
-//    return "this is logout page";
-//});
-//
-//Route::resource('post','PostController');
 
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
