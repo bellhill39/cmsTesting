@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCecbUserTable extends Migration
+class CreateTrainingProgramsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,11 @@ class CreateCecbUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('cecb_user', function (Blueprint $table) {
+        Schema::create('training_programs', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigIncrements('employee_id');
+            $table->integer('cost');
             $table->timestamps();
-            $table->string('username')->unique();
-            $table->string('email');
-            $table->string('password');
-            $table->string('department');
-
         });
     }
 
@@ -31,6 +28,6 @@ class CreateCecbUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cecb_user');
+        Schema::dropIfExists('training_programs');
     }
 }
